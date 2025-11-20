@@ -1,13 +1,21 @@
 package com.example.crud_api.model;
 
-
+import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
-@Component
+//@Component
+@Entity  // It is because Product is the entity class
 public class Product {
+
+    @Id
     private int prodId;
+
     private String prodName;
     private int prodPrice;
 
