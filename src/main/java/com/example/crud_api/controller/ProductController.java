@@ -28,6 +28,14 @@ import java.util.List;
         return service.getProductById(productId);
     }
 
+ // End-to-end flow (এক লাইনে)
+
+// JSON (HTTP Body)
+// → @RequestBody triggers Jackson
+// → Jackson makes Product object (deserialization)
+// → controller receives prod
+// → service.addProduct(prod)
+// → products.add(prod) stores it in ArrayList (memory)
     @PostMapping("/products")
     public  void addProduct(@RequestBody Product product) {
 //        @RequestBody is for Deserialization which tells JackSon library to convert the JSON file to object after Post the data. Other wise the new data cannot be seen
